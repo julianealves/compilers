@@ -1,0 +1,14 @@
+## Este eh um comentario 05415461()-=+-*/
+
+#/ Este eh um comentario 
+com mais de uma linha 
+/#
+
+data
+int = 154
+<=
+"Esta eh uma string"
+'%'
+""
+'A'
+145shsgs
