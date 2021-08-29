@@ -1,0 +1,118 @@
+## UFRGS - Compiladores - Marcelo Johann - 2021/1
+
+data {
+char: c = 'x';
+int: a = 'A';
+char: c  c = 100;
+int: i = 0;
+float: f= 0; 
+float [4..66]: vec = 1 2 3 4 'k' 'm' 2;
+int[0..9]: v = 0 0 0 0 0 0 0;
+char [4..5]: oi = '1' 's' 1 'd';
+int[0..99]: mat;
+}
+
+#/ This is a comment
+of multiple lines
+/#
+
+
+int: main(int: a, int: b)
+{
+    a = 0;
+    a = 5;
+    a = a - i;
+    v[a] = 55;
+    print (v[5]);
+    print (a);
+    i = 2;
+    a = ~b;
+    b = ~(a+2);
+    vetor[31] = (40+tempo) < 0 & 5 + ~5 - time;
+
+    print "Digite um numero: \n";
+    a = read;
+
+    if(a)
+        x = x + 1
+    else
+        print (x);
+
+    call = chama(1,s);
+    test = teste();
+    atrr = leai(read);
+    comefrom: secao de ifs;
+    abobrinha;
+
+    print (oi);
+
+    print "Valor de a ", a;
+    print "Valor de a ", a, "\n";
+
+    print oi;
+
+    i = incn(i,1);
+    a = incn(j);
+    b = incn(i+j);
+
+    test1();
+    test1(a,b);
+
+    until (i==10)
+    {
+        i = incn(i,1);
+        a = incn(a,1);
+    };
+
+    until (i!=10)
+        i = incn(i,1);
+
+    {
+        bloco avulso;
+        {};
+    };
+
+    if (a==15 | a==17)
+        print "A igual a 15 ou 17\n";
+    
+    if(i==100)
+    {
+        print "Nao tem como isso...\n";
+    }
+    else
+        print "OK!\n";
+
+    if (~(a==15)){
+        print "A=15\n";
+        marca 1;
+    };    
+
+    if(a+b > 34){
+        soma = 19 + add(3,a,b);
+        if (a>b)
+            print (oi)
+        else
+            return (~true);
+    };
+
+    {
+        comefrom: test1;
+    };
+
+    ;;;;
+}
+
+float: test1(int: a, float: oi)
+{
+    return (a);
+}
+
+
+char: test2(char: kkk)
+{
+    return (kkk+9);
+}
+
+char: test3()
+{
+}
