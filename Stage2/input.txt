@@ -16,7 +16,6 @@ int[0..99]: mat;
 of multiple lines
 /#
 
-
 int: main(int: a, int: b)
 {
     a = 0;
@@ -42,21 +41,19 @@ int: main(int: a, int: b)
     test = teste();
     atrr = leai(read);
     comefrom: secao de ifs;
-    abobrinha;
 
     print (oi);
 
     print "Valor de a ", a;
     print "Valor de a ", a, "\n";
 
-    print oi;
-
     i = incn(i,1);
     a = incn(j);
     b = incn(i+j);
 
-    test1();
-    test1(a,b);
+    ## test1();
+    ## test1(a,b);
+    abobrinha;
 
     until (i==10)
     {
@@ -84,7 +81,7 @@ int: main(int: a, int: b)
 
     if (~(a==15)){
         print "A=15\n";
-        marca 1;
+        x=x+1;
     };    
 
     if(a+b > 34){
@@ -98,8 +95,8 @@ int: main(int: a, int: b)
     {
         comefrom: test1;
     };
-
-    ;;;;
+    
+    ;;;
 }
 
 float: test1(int: a, float: oi)
@@ -115,4 +112,13 @@ char: test2(char: kkk)
 
 char: test3()
 {
+    until(a==10)
+    {print	x;};
 }
+
+int: function (int: x, int: y, int: z){
+    until (i!=10){
+        i = incn(i,1);
+    };
+}
+

@@ -58,19 +58,14 @@ program: decl
 decl: data func
 	;
 
-data: KW_DATA body
+data: KW_DATA '{' var_decl '}'
 	;
 
-body: '{' lcmd '}'
-
-lcmd: cmd lcmd
+var_decl: var var_decl
 	|
 	;
 
-cmd: variable_decl | vector
-	;
-
-variable_decl: variable_type ':' TK_IDENTIFIER '=' literals ';'
+var: variable_type ':' TK_IDENTIFIER '=' literals ';' | vector
 	;
 
 variable_type: KW_CHAR | KW_INT | KW_FLOAT
@@ -90,7 +85,7 @@ lliteral: literals lliteral
 	|
 	;
 
-func: variable_type ':' TK_IDENTIFIER '(' lparam ')' '{' body_func '}' func
+func: variable_type ':' TK_IDENTIFIER '(' lparam ')' '{' lcmd '}' func
 	|
 	;
 
@@ -102,34 +97,26 @@ fparam: variable_type ':' TK_IDENTIFIER
 	| variable_type ':' TK_IDENTIFIER ',' fparam
 	;
 
-body_func: attribution ';' body_func
-	| expr ';' body_func
-	| KW_COMEFROM ':' TK_IDENTIFIER ';' body_func
-	| cmdprint ';' body_func
-	| cmdretunr ';' body_func
-	| cmd_block body_func
-	| KW_UNTIL '(' expr ')' cmd_block body_func
-	| KW_UNTIL '(' expr ')' simplecmd ';' body_func
-	| if_else body_func
-	| ';' body_func		//empty command
-	|
-	;
+lcmd: cmd ';' lcmd
+    |
+    ;
 
-if_else: KW_IF '(' expr ')' cmd_block
-	| KW_IF '(' expr ')' '{' body_func '}' KW_ELSE
-        | KW_IF '(' expr ')' simplecmd ';'
-        | KW_IF '(' expr ')' simplecmd KW_ELSE
-        ;
-
-
-simplecmd: attribution
-	| expr
+cmd: attribution
+	| KW_COMEFROM ':' TK_IDENTIFIER
 	| cmdprint
 	| cmdretunr
+	| cmd_block
+	| TK_IDENTIFIER         //Label
+	| KW_UNTIL '(' expr ')' cmd
+	| KW_IF '(' expr ')' cmd cmd_else
 	|
 	;
 
-cmd_block: '{' body_func '}' ';'
+cmd_else: KW_ELSE cmd
+    |
+    ;
+
+cmd_block: '{' lcmd '}'
 	;
 
 attribution: TK_IDENTIFIER '=' expr
@@ -162,20 +149,20 @@ expr: LIT_INTEGER
 
 lexpr: expr
 	| expr ',' lexpr
-	| LIT_STRING ',' lexpr
-	| LIT_STRING
 	|
 	;
 
 cmdprint: KW_PRINT lprint
-	| KW_PRINT '(' lexpr ')'
 	;
 
-lprint: LIT_STRING
-	| LIT_STRING ',' lexpr
-	;
+lprint: expr
+    | LIT_STRING
+    | expr ',' lprint
+    | LIT_STRING ',' lprint
+    |
+    ;
 
-cmdretunr: KW_RETURN '(' expr ')'
+cmdretunr: KW_RETURN expr
 	;
 
 %%
