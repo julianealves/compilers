@@ -1,0 +1,47 @@
+## UFRGS - Compiladores - Marcelo Johann - 2021/1
+
+data {
+char: c = 'x';
+int: a = 'A';
+char: c  c = 100;
+int: i = 0;
+float: f= 0; 
+float [4..66]: vec = 1 2 3 4 'k' 'm' 2;
+int[0..9]: v = 0 0 0 0 0 0 0;
+char [4..5]: oi = '1' 's' 1 'd';
+int[0..99]: mat;
+}
+
+#/ This is a comment
+of multiple lines
+/#
+
+int: main(int: a, int: b)
+{
+    a = 0;
+    b = 5;
+    c = c - i;
+    
+    i = 2;
+    a = ~k;
+    b = ~(a+2);
+   
+    d = read;
+
+    x = x + 1;
+    
+
+    call = chama(1,s);
+    test = teste();
+    atrr = leai(read);
+ 
+    i = incn(i,1);
+    a = incn(j);
+    b = incn(i+j);
+
+    teste = a>b;
+    teste2 = a >= b;
+    teste3 = a*b;
+
+}
+
