@@ -1,0 +1,58 @@
+## UFRGS - Compiladores - Marcelo Johann - 2021/1
+
+data {
+char: c = 'x';
+int: a = 0;
+char: c  c = 100;
+int: i = 0;
+float: f= 0; 
+float [4..66]: vec = 1 2 3 4 'k' 'm' 2;
+int[0..9]: v = 0 0 0 0 0 0 0;
+char [4..5]: oi = '1' 's';
+int[0..99]: mat;
+int: call = 0;
+}
+
+#/ This is a comment
+of multiple lines
+/#
+
+int: main(int: aa, int: b)
+{
+    a = 0;
+   
+    c = 'B';
+    a = a + b / 4;
+    b = a;
+   
+    vec[0] = read;
+
+    i = i + 1;
+    
+   
+    call = chama(1,c);
+ 
+    f = mat[20] / i;
+    a = read;
+
+    a = function(a,b,call);
+
+}
+
+int: chama(int: e, char: k)
+{
+    if (e < k)
+	mat[0] = e + 5
+    else
+	mat[0] = e;
+    return (mat[0]);
+}
+
+int: function (int: x, int: y, int: z){
+    until (i!=10){
+        i = i + 1;
+    };
+    return i;
+}
+
+
